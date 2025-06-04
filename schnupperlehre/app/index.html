@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css" />
+<script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schnupperlehre Website
+    </title>
+    <style>
+        li {font-size: 20px;}
+        p {text-decoration: underline;}
+        p {font-size: 40px;}
+        p {font-weight: bold; }
+        h2 {font-size: 20px;}
+        h1 {
+            font-size: 40px;
+          }
+         h1 {font-weight: bold; } 
+         h1 {text-decoration: underline;}
+          img{max-width: 300px;} 
+          .autor {font-weight: bold; }
+          </style>
+</head>
+<body>   
+<h1>Spiderman far from Home</h1>
+<h2 class="autor">von Jon Watts inszeniert.</h2>
+<img src="https://www.kinoevent.ch/images/Breite_400px_RGB/p_63259.jpg" alt="Beschreibung des Bildes">
+<p> Beschreibung</p>
+<h2> <u>Far from Home</u> geht <u>Peter Parker</u> alias <u>Spider-man</u>  mit seinen Freunden auf Klassenfahrt nach <u>Europa</u>. 
+Doch der entspannte Urlaub wird schnell unterbrochen, als er von <u>Nick Furry</u>  gerufen wird,
+um bei der Untersuchung von mysteriösen Elementar-Angriffen zu helfen.
+Gemeinsam mit dem vermeintlichen Helden <u> Mysterio,</u>der sich später als Bösewicht entpuppt, muss <u> <Spider-man></
+</h2>
+<p> Eigenschaft</p>
+<ol>
+
+<Li> <strong>Sprachen:
+</strong> Deutsch, Englisch, Französisch und Türkisch</Li>
+<li> <strong>Veröffentlicht:</strong> 3. Juli 2019</li>
+<li><strong>Dauer:</strong>2 Stunden 10 Minuten</li>
+</ol>
+<p> Warum schauen?</p>
+<h2> Er bietet eine gute Mischung aus Action, Humor und überraschenden Wendungen und vertieft die übersicht von Peter Parker. </h2>
+
+
+<sl-dialog label="Dialog" class="dialog-overview">
+  <a href="http://127.0.0.1:5500/app/%C3%BCbersicht.html">zurück gehen</a>
+  <sl-button slot="footer" variant="primary">Close</sl-button>
+</sl-dialog>
+
+<sl-button>Zurück gehen</sl-button>
+
+<script>
+  const dialog = document.querySelector('.dialog-overview');
+  const openButton = dialog.nextElementSibling;
+  const closeButton = dialog.querySelector('sl-button[slot="footer"]');
+
+  openButton.addEventListener('click', () => dialog.show());
+  closeButton.addEventListener('click', () => dialog.hide());
+</script>
+
+
+
+
+</body>
+</html>
