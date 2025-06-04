@@ -44,24 +44,7 @@ Gemeinsam mit dem vermeintlichen Helden <u> Mysterio,</u>der sich sp채ter als B�
 <h2> Er bietet eine gute Mischung aus Action, Humor und 체berraschenden Wendungen und vertieft die 체bersicht von Peter Parker. </h2>
 
 
-<sl-dialog label="Dialog" class="dialog-overview">
-  <a href="http://127.0.0.1:5500/app/%C3%BCbersicht.html">zur체ck gehen</a>
-  <sl-button slot="footer" variant="primary">Close</sl-button>
-</sl-dialog>
-
-<sl-button>Zur체ck gehen</sl-button>
-
-<script>
-  const dialog = document.querySelector('.dialog-overview');
-  const openButton = dialog.nextElementSibling;
-  const closeButton = dialog.querySelector('sl-button[slot="footer"]');
-
-  openButton.addEventListener('click', () => dialog.show());
-  closeButton.addEventListener('click', () => dialog.hide());
-</script>
-
-
-
+<sl-button href="http://127.0.0.1:5500/app/%C3%BCbersicht.html">Zur체ck gehen</sl-button>
 
 </body>
 </html>
