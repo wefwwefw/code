@@ -11,136 +11,71 @@
     ></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Films to buy</title>
+    <title>RentAndBuyMovies.com</title>
   </head>
   <body>
-    <h1>Movies to buy!</h1>
+    <h1>Rent or Buy Movies</h1>
+    <button onclick="toggleDarkMode()">Switch Theme</button>
+
     <sl-tab-group placement="bottom">
       <sl-tab slot="nav" panel="Home">Home</sl-tab>
       <sl-tab slot="nav" panel="Shop">Shop</sl-tab>
       <sl-tab slot="nav" panel="Categories">Categories</sl-tab>
       <sl-tab slot="nav" panel="Contact">Contact</sl-tab>
-
-      <sl-tab-panel name="Home">This is the main Menu.</sl-tab-panel>
-      <sl-tab-panel name="Shop">This is the Shop.</sl-tab-panel>
-      <sl-tab-panel name="Categories">This is the Categories Tab.</sl-tab-panel>
-      <sl-tab-panel name="Contact">This is the Contact Page.</sl-tab-panel>
+      <sl-tab-panel name="Home"></sl-tab-panel>
+      <sl-tab-panel name="Shop"></sl-tab-panel>
+      <sl-tab-panel name="Categories"></sl-tab-panel>
+      <sl-tab-panel name="Contact"></sl-tab-panel>
     </sl-tab-group>
 
-    <sl-carousel class="carousel-thumbnails" navigation loop>
-      <sl-carousel-item>
-        <img
-          alt="The sun shines on the mountains and trees (by Adam Kool on Unsplash)"
-          src="https://www.maximumcinema.ch/wp-content/uploads/2019/07/spderman-far-from-home-filmtipp-schweiz.jpg"
-        />
-      </sl-carousel-item>
-      <sl-carousel-item>
-        <img
-          alt="A waterfall in the middle of a forest (by Thomas Kelly on Unsplash)"
-          src="https://images.bravo.de/spider-man-no-way-home-dieses-ende-durften-fans-nie-sehenjpg,id=33c166de,b=bravo,w=1600,rm=sk.jpeg"
-        />
-      </sl-carousel-item>
-      <sl-carousel-item>
-        <img
-          alt="The sun is setting over a lavender field (by Leonard Cotte on Unsplash)"
-          src="https://www.comic-couch.de/fileadmin/user_upload/Comic-Couch-Spiderman-Far-From-Home-1.jpg"
-        />
-      </sl-carousel-item>
-      <sl-carousel-item>
-        <img
-          alt="A field of grass with the sun setting in the background (by Sapan Patel on Unsplash)"
-          src="https://img.europapress.es/fotoweb/fotonoticia_20230918173707_690.jpg"
-        />
-      </sl-carousel-item>
-      <sl-carousel-item>
-        <img
-          alt="A scenic view of a mountain with clouds rolling in (by V2osk on Unsplash)"
-          src="https://compote.slate.com/images/4215de08-83d1-4f01-b52b-3e2ca6344a44.jpeg?width=780&height=520&rect=1560x1040&offset=0x0"
-        />
-      </sl-carousel-item>
-    </sl-carousel>
+    <sl-card class="card-overview">
+      <img
+        slot="image"
+        src="https://assets.gqindia.com/photos/5d1c961beaf24a5f5a54dbc9/master/w_1600%2Cc_limit/10.jpg"
+        alt="A kitten sits patiently between a terracotta pot and decorative grasses."
+      />
 
-    <sl-button
-      href="http://127.0.0.1:5501/schnupperlehre/app/index.html"
-      variant="danger"
-      >zurück gehen</sl-button
-    >
+      <strong>Marvel Studios</strong><br />
+      Spider-man Far From Home<br />
+      <small>2 hours and 10 minutes</small>
 
-    <body style="background-color: rgb(216, 216, 216)">
-      <!-- Dein HTML-Inhalt -->
-    </body>
-
+      <div slot="footer">
+        <sl-button href="http://127.0.0.1:5501/schnupperlehre/app/index.html"
+          >More Info!</sl-button
+        >
+        <sl-rating></sl-rating>
+      </div>
+    </sl-card>
     <style>
-      .dialog__panel {
-        background-color: rgb(63, 0, 145);
-      }
-      .carousel-thumbnails {
-        width: 600px;
-        --slide-aspect-ratio: 2 / 2;
+      .card-overview {
+        max-width: 350px;
       }
 
-      .thumbnails {
+      .card-overview small {
+        color: var(--sl-color-neutral-500);
+      }
+
+      .card-overview [slot="footer"] {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
       }
 
-      .thumbnails__scroller {
-        display: flex;
-        gap: var(--sl-spacing-small);
-        overflow-x: auto;
-        scrollbar-width: none;
-        scroll-behavior: smooth;
-        scroll-padding: var(--sl-spacing-small);
+      body {
+        background-color: white;
+        color: black;
+        font-size: 16px;
       }
 
-      .thumbnails__scroller::-webkit-scrollbar {
-        display: none;
-      }
-
-      .thumbnails__image {
-        width: 64px;
-        height: 64px;
-        object-fit: cover;
-
-        opacity: 0.3;
-        will-change: opacity;
-        transition: 250ms opacity;
-
-        cursor: pointer;
-      }
-
-      .thumbnails__image.active {
-        opacity: 1;
+      .dark-mode {
+        background-color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
       }
     </style>
 
     <script>
-      {
-        const carousel = document.querySelector(".carousel-thumbnails");
-        const scroller = document.querySelector(".thumbnails__scroller");
-        const thumbnails = document.querySelectorAll(".thumbnails__image");
-
-        scroller.addEventListener("click", (e) => {
-          const target = e.target;
-
-          if (target.matches(".thumbnails__image")) {
-            const index = [...thumbnails].indexOf(target);
-            carousel.goToSlide(index);
-          }
-        });
-
-        carousel.addEventListener("sl-slide-change", (e) => {
-          const slideIndex = e.detail.index;
-
-          [...thumbnails].forEach((thumb, i) => {
-            thumb.classList.toggle("active", i === slideIndex);
-            if (i === slideIndex) {
-              thumb.scrollIntoView({
-                block: "nearest",
-              });
-            }
-          });
-        });
+      function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
       }
     </script>
   </body>

@@ -19,8 +19,8 @@ class Person {
   }
 }
 
-const user = new Person(person, "peter", "25", "blue");
-console.log("Name: " + user.name);
+const user = new Person( "john", "basketball", "25", "blue");
+console.log("Name: " + user.firstName);
 console.log("Alter: " + user.age);
 
 const readline = require("readline-sync");
@@ -39,11 +39,11 @@ if (user === "Basketball!") {
   console.log("Ich liebe Basketball!");
 }
 
-let jung = readline.question("Was ist deine Augenfarbe?");
-console.log("Okay, sie sind " + jung);
+let eye = readline.question("Was ist deine Augenfarbe?");
+console.log("Okay, sie sind " + eye);
 
-const boy = new person {constructor (username,hobbbby,jung)}
-console.log(username + "name");
-console.log(hobbbby + "hobby");
-console.log(jung + "jung");
-console.log(person + "alter");
+const boy = new Person (username,hobbbby,eye)
+console.log(boy.firstName+ " name")
+console.log(hobbbby + " hobby");
+console.log(eye + " eye");
+console.log(person + " alter");
